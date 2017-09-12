@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var os = require('os')
 var mongodb = require('mongodb');
-var mLab =  process.env.MONGOLAB_URI  || "mongodb://Huytran1995:Minhhuy1995!@ds133084.mlab.com:33084/url-shortener-microservice";
+var mLab =  process.env.MONGODB_URI  || "mongodb://Huytran1995:Minhhuy1995!@ds133084.mlab.com:33084/url-shortener-microservice";
 var MongoClient = mongodb.MongoClient
 
 var shortid = require('shortid');
@@ -50,7 +50,7 @@ router.get('/new/:url(*)', function (req, res, next) {
               /*if it doesn't exist in the collection then insert the database in*/
               collection.insert([newUrl]);
               /*return the orginal url and the short version*/
-              res.json({ original_url: params, short_url: "https://joon1995urlshortener.herokuapp.com/" + shortCode });
+              res.json({ original_url: params, short_url:"https://joon1995urlshortener.herokuapp.com/" +  shortCode });
             } else {
             // if URL is invalid print out the message that the user's url is wrong
               res.json({ error: "Wrong url format, make sure you have a valid protocol and real site." });
