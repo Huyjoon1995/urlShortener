@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Free Code Camp URL Shortener Microservice
+  h2 User Stories:
+  ul
+    li User can pass a URL as a parameter and user will receive a shortened URL in the JSON response.
+    li When user visits the short URL, it will redirect to the orginal URL.
+  h3 Example Creation :
+    br
+    code.red localhost3000/new/https://google.com
+    br
+    code.red localhost3000/new/https://youtube.com
+  h3 Example Creation Output:
+  {original_url: "https://youtube.com", short_url: "localhost:3000/SJUIMhE5@"}"
+  p Short Link:
+    br
+    code.red localhost:3000/SJUIMhE5@
+  p Redirect:
+    br
+    code.red https://youtube.com
